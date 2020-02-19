@@ -1,150 +1,48 @@
 {% extends 'base.html'%}
 {% block content %}
+
     <h2>{{ page_title }}</h2>
     <p>
         Star Wars is a science-fiction franchise comprising movies, books, comics, video games, toys, and animated shows. It is a fictional universe created by George Lucas. The Star Wars story employs archetypal motifs common to science fiction, political climax and classical mythology, as well as musical motifs of those aspects. As one of the foremost examples of the space opera subgenre of science fiction, Star Wars has become part of mainstream popular culture, as well as being one of the highest-grossing series of all time. It is currently the second highest-grossing film series behind only the Marvel Cinematic Universe and also the second highest-grossing media franchise of all time (with only the Japanese franchise Pokémon outranking it).
     </p>
+
+    {% for member in company %}
+    
+
     <div class="row featurette">
+
+        {% if loop.index %2 !=0 %}
         <div class="col-md-7">
-            <h3>Luke Skywalker</h3>
+            <h3><a href="/about/{{ member.url }}">{{ loop.index }}. {{ member.name }}</a></h3>
             <p>
-            Jedi whose coming of age and rise as a Jedi are portrayed in the original Star Wars trilogy. Son of Anakin Skywalker and Padmé Amidala, and Leia Organa's twin brother.[245] After the Galactic Empire's defeat, Luke becomes a Jedi Master and opens a Jedi Academy, but later goes into exile on the planet Ahch-To and cuts himself off from the Force, after the Academy and all its students are destroyed by his nephew, Kylo Ren, the son of Leia and Han Solo, who had fallen to the dark side. He is eventually found by Rey, the secret granddaughter of Emperor Palpatine, whom he reluctantly agrees to train, and later uses the last of his powers to face his nephew during the Battle of Crait, before dying peacefully and becoming one with the Force. His spirit later helps Rey gain the motivation necessary to face Palpatine, and, after she and the Resistance defeat the Final Order and the Sith, restoring peace to the galaxy, he appears to Rey alongside Leia's spirit when she visits his old home on Tatooine and assumes her role as a Skywalker.
+            {{ member.description }}
             </p>
         </div>
         <div class="col-md-5">
-            <img src="https://media.beliefnet.com/~/media/photos-with-attribution/entertainment/movies/lukeontatooine3creditlucasfilmltd20thcenturyfox.jpg?as=1" class="img-fluid">
+            <img class= "featurette-image img-fluid img-responsive" src="{{ member.image_source }}">
         </div>
-    </div>
-    <div class="row featurette">
+
+        {% else %}
         <div class="col-md-5">
-            <img src="https://pm1.narvii.com/6117/176ccd78babd29f19b4d15574116ebed1d2d60fb_hq.jpg" class="img-fluid">
+            <img class= "featurette-image img-fluid img-responsive" src="{{ member.image_source }}">
         </div>
         <div class="col-md-7">
-            <h3>Anakin Skywalker / Darth Vader</h3>
+            <h3><a href="/about/{{ member.url }}">{{ loop.index }}. {{ member.name }}</a></h3>
             <p>
-            Jedi whose fall and redemption are portrayed in the Star Wars films. His master was Obi-Wan Kenobi. He was married to Padmé Amidala; father of Luke and Leia. He is an excellent podracer and he is "the Chosen One". Known as "Darth Vader" after his fall to the dark side.
+            {{ member.description }}
             </p>
         </div>
+
+        {% endif %}
+
     </div>
-    <div class="row featurette">
-        <div class="col-md-7">
-            <h3>Princess Leia Organa</h3>
-            <p>
-            Leader in the Rebel Alliance, the New Republic, and the Resistance. She is the biological daughter of Anakin Skywalker and Padmé Amidala, as well as Luke Skywalker's twin sister, Han Solo's wife and Kylo Ren's mother. She later uses her last remaining powers to help her son redeem himself after he had fallen to the dark side, and dies peacefully, becoming one with the Force. Leia's spirit later appears alongside her brother's when Rey visits Luke's old home on Tatooine and assumes her role as a Skywalker.
-            </p>
-        </div>
-        <div class="col-md-5">
-            <img src="https://s.yimg.com/ny/api/res/1.2/RJrWO0QbVkcwQ9gCHsQCtA--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/http://media.zenfs.com/en-US/homerun/people_218/718008c34b7a8acd1be3fbb5cf7e9360" class="img-fluid">
-        </div>
-    </div>
-    <div class="row featurette">
-        <div class="col-md-5">
-            <img src="https://i.skyrock.net/6567/71486567/pics/2916071859_1.jpg" class="img-fluid">
-        </div>
-        <div class="col-md-7">
-            <h3>Padmé Amidala</h3>
-            <p>
-            Teenage queen, and later Senator of Naboo, born Padme Naberrie, who marries Anakin Skywalker and dies giving birth to Luke Skywalker and Leia Organa.
-            </p>
-        </div>
-    </div>
-    <div class="row featurette">
-        <div class="col-md-7">
-            <h3>Han Solo</h3>
-            <p>
-            Captain of the Millennium Falcon who joins the Rebellion and marries Leia Organa. In The Force Awakens, he is murdered by his son, Kylo Ren, after a failed attempt to turn his son from the dark side, although Ren remains subsequently haunted by his father's death. A vision of Han's spirit later appears to his son in The Rise of Skywalker, this time helping him redeem himself and leave his Kylo Ren persona behind.
-            </p>
-        </div>
-        <div class="col-md-5">
-            <img src="https://vignette.wikia.nocookie.net/fr.starwars/images/4/48/Han_Solo.jpg/revision/latest?cb=20160514115511" class="img-fluid">
-        </div>
-    </div>
-    <div class="row featurette">
-        <div class="col-md-5">
-            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/chewbacca-death-star-wars-the-rise-of-skywalker-1578081563.jpg?crop=0.488xw:0.976xh;0,0&resize=480:*" class="img-fluid">
-        </div>
-        <div class="col-md-7">
-            <h3>Chewbacca</h3>
-            <p>
-            Han Solo's Wookiee partner and co-pilot of the Millennium Falcon.
-            </p>
-        </div>
-    </div>
-    <div class="row featurette">
-        <div class="col-md-7">
-            <h3>Obi-Wan / Ben Kenobi</h3>
-            <p>
-            Wise and skilled Jedi Master who trains Anakin and later Luke Skywalker. A member of the Jedi Council and one of the survivors of the Great Jedi Purge, Obi-Wan is also a Jedi General during the Clone Wars. He kills General Grievous and defeated Darth Maul, and his master is Qui-Gon Jinn, who is killed by Maul. Obi-Wan is slain In A New Hope by his former apprentice Anakin, who had become Darth Vader. Guinness' and McGregor's voices as Obi-Wan can be heard in The Force Awakens during a vision sequence featuring the character Rey.
-            </p>
-        </div>
-        <div class="col-md-5">
-            <img src="https://static0.cbrimages.com/wordpress/wp-content/uploads/2019/10/kenobi-feature.jpg" class="img-fluid">
-        </div>
-    </div>
-    <div class="row featurette">
-        <div class="col-md-5">
-            <img src="https://www.cheatsheet.com/wp-content/uploads/2020/01/Yoda-Cosplay.jpg" class="img-fluid">
-        </div>
-        <div class="col-md-7">
-            <h3>Yoda</h3>
-            <p>
-            Jedi master who trains Count Dooku and Luke Skywalker. He goes into exile on Dagobah after the fall of the Republic in Revenge of the Sith. He usually speaks the second half of his sentences before the first half; however, if his sentence is short enough, he does not.
-            </p>
-        </div>
-    </div>
-    <div class="row featurette">
-        <div class="col-md-7">
-            <h3>Jabba the Hutt</h3>
-            <p>
-            Notorious Hutt crime boss operating in the Outer Rim, appearing in A New Hope Special Edition, Return of the Jedi, The Phantom Menace, and The Clone Wars. His main base of operations, a castle, is located in the deserts of Tatooine, and he is shown to have numerous bounty hunters under his employ over the years, including Boba Fett. Jabba is eventually killed by Princess Leia, who strangles him to death aboard his sail barge in Return of the Jedi. His full name is Jabba Desilijic Tiure.
-            </p>
-        </div>
-        <div class="col-md-5">
-            <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Jabba_the_Hutt_in_Return_of_the_Jedi_%281983%29.png" class="img-fluid">
-        </div>
-    </div>
-    <div class="row featurette">
-        <div class="col-md-5">
-            <img src="https://upload.wikimedia.org/wikipedia/en/c/cb/Lando6-2.jpg" class="img-fluid">
-        </div>
-        <div class="col-md-7">
-            <h3>Lando Calrissian</h3>
-            <p>
-            Smuggler, gambler, and longtime friend of Han Solo, as well as the origiinal owner of the Millennium Falcon. He later becomes a General in the Rebel Alliance and leads the attack on the second Death Star in Return of the Jedi. In The Rise of Skywalker, he is shown to have retired, but nonetheless helps out Rey, Poe Dameron, Finn, Chewbacca, C-3PO and BB-8 when they come to Pasaana looking for a Sith dagger that would help them find the resurrected Emperor Palpatine, which Lando and Luke Skywalker looked for themselves a long time ago. He later decides to join the Resistance and flies the Falcon alongside Chewbacca during the final Battle of Exegol.
-            </p>
-        </div>
-    </div>
-    <div class="row featurette">
-        <div class="col-md-7">
-            <h3>C-3PO</h3>
-            <p>
-            Protocol droid who appears throughout most of the Star Wars films.
-            </p>
-        </div>
-        <div class="col-md-5">
-            <img src="https://cdn-media.rtl.fr/cache/q2u3JJlly0s91Bxt6D262w/880v587-0/online/image/2019/0129/7796373094_c-3po-dans-le-reveil-de-la-force.jpg" class="img-fluid">
-        </div>
-    </div>
-    <div class="row featurette">
-        <div class="col-md-5">
-            <img src="https://d34urnl45u363e.cloudfront.net/store/mediaobject/35898/image/large-514cb6929e239708d942522bf679385c.jpg" class="img-fluid">
-        </div>
-        <div class="col-md-7">
-            <h3>R2-D2</h3>
-            <p>
-            Astromech droid built on Naboo that appears in all nine Star Wars films and Rogue One.
-            </p>
-        </div>
-    </div>
-    <div class="row featurette">
-        <div class="col-md-7">
-            <h3>Qui-Gon Jinn</h3>
-            <p>
-            Jedi Master trained by Count Dooku, and mentor of Obi-Wan Kenobi. He discovers Anakin Skywalker on Tatooine and vows to train him, but is killed in battle by Darth Maul. His voice is later heard by Rey in The Rise of Skywalker during her final confrontation with Emperor Palpatine on Exegol, 66 years after Qui-Gon's death, as one of the many Jedi to encourage her to take her final steps and defeat the Sith once and for all.
-            </p>
-        </div>
-        <div class="col-md-5">
-            <img src="https://vignette.wikia.nocookie.net/starwars/images/f/f6/Qui-Gon_Jinn_Headshot_TPM.jpg/revision/latest/scale-to-width-down/1000?cb=20180430174809" class="img-fluid">
-        </div>
-    </div>
+
+    {% if loop.index !=13 %}
+
+    <hr class="featurette-divider">
+
+    {% endif %}
+
+    {% endfor %}
+
 {% endblock %}
