@@ -34,7 +34,7 @@ def about_member(member_name):
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
-        flash("Thanks {}, I have received your message and will be in touch soon!".format(
+        flash("Thanks {}, I've received your message!".format(
             request.form["name"]))
     return render_template("contact.html", page_title="Contact")
 
